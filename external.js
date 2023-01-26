@@ -4,7 +4,7 @@
 //Works correctly so far.
 
 function getComputerChoice() {
-    var computerSelection = Math.floor(Math.random() * 3);
+    const computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {
         return "rock";
     } else if (computerSelection === 1) {
@@ -13,22 +13,29 @@ function getComputerChoice() {
         return "scissors";
     };
 }
-console.log(getComputerChoice());
+console.log(getComputerChoice);
 //For easier code write a getPlayerChoice function, perhaps?
 //this function will randomly choose between rock, paper, or scissors.
+//correct console entries.
 function getPlayerChoice() {
-    var playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
-        return "rock" || "paper" || "scissors";
+    var playerSelection = prompt("Rock, Paper, or Scissors?");
+    if (playerSelection.toLowerCase() === "rock") {
+        return "rock";
+
+    } else if (playerSelection.toLowerCase() === "paper") {
+        return "paper";
+
+    } else if (playerSelection.toLowerCase() === "scissors") {
+        return "scissors";
   
 }};
-console.log(getPlayerChoice());
+console.log(getPlayerChoice);
 
 //Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
 //returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
 //make sure playerSelection always returns lowercase letters to match function.
 //having issues with variables not comparing
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection)  {
 
 
 
