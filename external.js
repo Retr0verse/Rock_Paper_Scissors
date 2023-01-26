@@ -14,11 +14,23 @@ function getComputerChoice() {
     };
 }
 console.log(getComputerChoice());
+//For easier code write a getPlayerChoice function, perhaps?
+//this function will randomly choose between rock, paper, or scissors.
+function getPlayerChoice() {
+    var playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+        return "rock" || "paper" || "scissors";
+  
+}};
+console.log(getPlayerChoice());
+
 //Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
 //returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
 //make sure playerSelection always returns lowercase letters to match function.
-
+//having issues with variables not comparing
 function playRound(playerSelection, computerSelection) {
+
+
 
     if (playerSelection === computerSelection) {
         return "Draw! Pick again!";
@@ -38,8 +50,5 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
-const playerSelection = ("Paper").toLowerCase();
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(getPlayerChoice() , getComputerChoice()));
 
-console.log(playerSelection);
