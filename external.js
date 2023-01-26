@@ -13,7 +13,6 @@ function getComputerChoice() {
         return "scissors";
     };
 }
-console.log(getComputerChoice);
 //For easier code write a getPlayerChoice function, perhaps?
 //this function will randomly choose between rock, paper, or scissors.
 //correct console entries.
@@ -27,35 +26,46 @@ function getPlayerChoice() {
 
     } else if (playerSelection.toLowerCase() === "scissors") {
         return "scissors";
-  
-}};
-console.log(getPlayerChoice);
+
+    }
+};
 
 //Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
 //returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
 //make sure playerSelection always returns lowercase letters to match function.
 //having issues with variables not comparing
-function playRound(playerSelection, computerSelection)  {
+function playRound(playerSelection, computerSelection) {
 
 
 
     if (playerSelection === computerSelection) {
         return "Draw! Pick again!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors!";
+        return "You Win! Rock beats Scissors!", playerScore++;
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock!";
+        return "You Lose! Paper beats Rock!", computerScore++;
 
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock!";
+        return "You Win! Paper beats Rock!", playerScore++;
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper!";
+        return "You Lose! Scissors beats Paper!", computerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors!";
+        return "You Lose! Rock beats Scissors!", computerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper!";
+        return "You Win! Scissors beats Paper!", playerScore++;
     }
 };
 
-console.log(playRound(getPlayerChoice() , getComputerChoice()));
+console.log(playRound(getPlayerChoice(), getComputerChoice()));
+//Write a function that plays multiple rounds Game(), 
+// Call playRound inside the function to play 5 rounds that keeps score and reports winner or loser at the end.
 
+function Game() {
+    //ensure prompt continues to run for 5 games.
+    // create game ranking for each round to sum up
+    playRound(getPlayerChoice(), getComputerChoice());
+    for (let i = 0; i <= 5; i++) {
+
+}};
+
+Game();
