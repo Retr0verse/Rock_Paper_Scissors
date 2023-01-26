@@ -11,7 +11,7 @@ function getComputerChoice() {
         return "paper";
     } else {
         return "scissors";
-    };
+    }
 }
 //For easier code write a getPlayerChoice function, perhaps?
 //this function will randomly choose between rock, paper, or scissors.
@@ -28,7 +28,7 @@ function getPlayerChoice() {
         return "scissors";
 
     }
-};
+}
 
 //Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
 //returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
@@ -41,31 +41,30 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "Draw! Pick again!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors!", playerScore++;
+        return "You Win! Rock beats Scissors!";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock!", computerScore++;
+        return "You Lose! Paper beats Rock!";
 
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock!", playerScore++;
+        return "You Win! Paper beats Rock!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper!", computerScore++;
+        return "You Lose! Scissors beats Paper!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors!", computerScore++;
+        return "You Lose! Rock beats Scissors!";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper!", playerScore++;
+        return "You Win! Scissors beats Paper!";
     }
-};
-
+}
 console.log(playRound(getPlayerChoice(), getComputerChoice()));
 //Write a function that plays multiple rounds Game(), 
 // Call playRound inside the function to play 5 rounds that keeps score and reports winner or loser at the end.
 
 function Game() {
     //ensure prompt continues to run for 5 games.
-    // create game ranking for each round to sum up
-    playRound(getPlayerChoice(), getComputerChoice());
-    for (let i = 0; i <= 5; i++) {
+    // create game score for each round to sum up and announce winner or loser.(will need score variable)
+    var score = 0;
+    for (var i = 0; i < 5; i++) {
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        var computerSelection = getComputerChoice();
 
-}};
-
-Game();
+    }}
