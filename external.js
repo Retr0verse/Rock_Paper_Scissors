@@ -5,18 +5,15 @@
 //RE WORK with MULTIPLE ROUNDS ** 
 var playRound = function () {
     //Players Choice
-    let playerSelection = prompt("Rock, Paper, or Scissors?");
+    let playerSelection = prompt("Rock, Paper, or Scissors?: ");
     console.log(playerSelection);
 
     if (playerSelection == "rock") {
         console.log(playerSelection = 1);
-        return "rock";
     } else if (playerSelection == "paper") {
         console.log(playerSelection = 2);
-        return "paper";
-    } else if (playerSelection.toLowerCase() == "scissors") {
-        console.log(playerSelection = 3);
-        return "scissors";
+    } else if (playerSelection == "scissors") {
+        console.log(playerSelection == 3);
 
     }
 
@@ -29,11 +26,11 @@ var playRound = function () {
     console.log(computerSelection);
 
     if (computerSelection == 1) {
-        alert("rock");
+        alert("Rock!");
     } else if (computerSelection == 2) {
-        alert("paper");
+        alert("Paper!");
     } else if (computerSelection == 3) {
-        alert("scissors");
+        alert("Scissors!");
     }
 
     return {
@@ -56,6 +53,12 @@ function result(playerSelection, computerSelection) {
         alert("You Win! Paper beats Rock!");
     } else if (computerSelection == 1 && playerSelection == 3) {
         alert("You Lose! Rock beats Scissors!");
+    } else if (computerSelection == 2 && playerSelection == 3) {
+        alert("You Win! Scissors beats Paper!");
+    } else if (computerSelection == 3 && playerSelection == 2) {
+        alert("You Lose! Scissors beats Paper!");
+    } else if (computerSelection == 2 && playerSelection == 1) {
+        alert("You Win! Paper beats Rock!");
     } else if (computerSelection == playerSelection) {
         alert("Draw!");
     }
