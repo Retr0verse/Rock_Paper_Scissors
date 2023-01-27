@@ -1,3 +1,25 @@
+//For easier code write a getPlayerChoice function, perhaps?
+//this function will randomly choose between rock, paper, or scissors.
+//correct console entries.
+
+//RE WORK with MULTIPLE ROUNDS ** 
+var playRound = function(){
+//Players Choice
+    let playerSelection = prompt("Rock, Paper, or Scissors?");
+
+ 
+    if (playerSelection.toLowerCase() === "rock") {
+        return "rock";
+
+    } else if (playerSelection.toLowerCase() === "paper") {
+        return "paper";
+
+    } else if (playerSelection.toLowerCase() === "scissors") {
+        return "scissors";
+
+    }
+}
+
 //user vs computer rock-paper-scissors-begin with a function called getComputerChoice,
 //this function will randomly choose between rock, paper, or scissors.
 //Tip use console to ensure this is returning as expected before moving on.
@@ -13,22 +35,7 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-//For easier code write a getPlayerChoice function, perhaps?
-//this function will randomly choose between rock, paper, or scissors.
-//correct console entries.
-function getPlayerChoice() {
-    var playerSelection = prompt("Rock, Paper, or Scissors?");
-    if (playerSelection.toLowerCase() === "rock") {
-        return "rock";
 
-    } else if (playerSelection.toLowerCase() === "paper") {
-        return "paper";
-
-    } else if (playerSelection.toLowerCase() === "scissors") {
-        return "scissors";
-
-    }
-}
 
 //Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
 //returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
@@ -62,8 +69,7 @@ console.log(playRound(getPlayerChoice(), getComputerChoice()));
 function Game() {
     //ensure prompt continues to run for 5 games.
     // create game score for each round to sum up and announce winner or loser.(will need score variable)
-    var score = 0;
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i <= 5; i++) {
         var playerSelection = prompt("Rock, Paper, or Scissors?");
         var computerSelection = getComputerChoice();
 
