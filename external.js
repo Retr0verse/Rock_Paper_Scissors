@@ -71,7 +71,7 @@ function result(playerSelection, computerSelection) {
 function Game() {
     //ensure prompt continues to run for 5 games.
     // create game score for each round to sum up and announce winner or loser.(will need score variable)
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= 5; i++) {
         var opt = playRound();
         result(opt.playerSelection, opt.computerSelection);
     }
