@@ -1,11 +1,14 @@
 //For easier code write a getPlayerChoice function, perhaps?
 //this function will randomly choose between rock, paper, or scissors.
 //correct console entries.
+let playerScore = 0;
+let computerScore = 0;
 
+let getPlayerChoice = function () {
 //RE WORK with MULTIPLE ROUNDS ** 
 var playRound = function () {
     //Players Choice
-    let playerSelection = prompt("Rock, Paper, or Scissors?: ");
+    let playerSelection = prompt("Rock, Paper, or Scissors?: ") ;
     console.log(playerSelection);
 
     if (playerSelection == "rock") {
@@ -13,7 +16,7 @@ var playRound = function () {
     } else if (playerSelection == "paper") {
         console.log(playerSelection = 2);
     } else if (playerSelection == "scissors") {
-        console.log(playerSelection == 3);
+        console.log(playerSelection = 3);
 
     }
 
@@ -47,18 +50,25 @@ var playRound = function () {
 function result(playerSelection, computerSelection) {
     if (computerSelection == 2 && playerSelection == 1) {
         alert("You Lose! Paper beats Rock!");
+        computerScore += 1;
     } else if (computerSelection == 3 && playerSelection == 1) {
         alert("You Win! Rock beats Scissors!");
+        playerScore += 1;
     } else if (computerSelection == 1 && playerSelection == 2) {
         alert("You Win! Paper beats Rock!");
+        playerScore += 1;
     } else if (computerSelection == 1 && playerSelection == 3) {
         alert("You Lose! Rock beats Scissors!");
+        computerScore += 1;
     } else if (computerSelection == 2 && playerSelection == 3) {
         alert("You Win! Scissors beats Paper!");
+        playerScore += 1;
     } else if (computerSelection == 3 && playerSelection == 2) {
         alert("You Lose! Scissors beats Paper!");
+        computerScore += 1;
     } else if (computerSelection == 2 && playerSelection == 1) {
         alert("You Win! Paper beats Rock!");
+        playerScore += 1;
     } else if (computerSelection == playerSelection) {
         alert("Draw!");
     }
@@ -71,10 +81,21 @@ function result(playerSelection, computerSelection) {
 function Game() {
     //ensure prompt continues to run for 5 games.
     // create game score for each round to sum up and announce winner or loser.(will need score variable)
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i < 5; i++) {
         var opt = playRound();
         result(opt.playerSelection, opt.computerSelection);
     }
 }
 
+function winGame() {
+    if(playerScore == 5) {
+        return "You Win!";
+        } else if(computerScore == 5) {
+        return "You Lose!";
+    
+    }
+}
 Game();
+
+console.log(playerScore);
+console.log(computerScore);
