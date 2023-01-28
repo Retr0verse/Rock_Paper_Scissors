@@ -17,7 +17,7 @@ function getComputerChoice() {
 //this function will randomly choose between rock, paper, or scissors.
 //correct console entries.
 function getPlayerChoice() {
-    var playerSelection = prompt("Rock, Paper, or Scissors?");
+    const playerSelection = prompt("Rock, Paper, or Scissors?");
     if (playerSelection.toLowerCase() === "rock") {
         return "rock";
 
@@ -36,7 +36,8 @@ function getPlayerChoice() {
 //having issues with variables not comparing
 function playRound(playerSelection, computerSelection) {
 
-
+    const playerScore = 0;
+    const computerScore = 0;
 
     if (playerSelection === computerSelection) {
         return "Draw! Pick again!";
