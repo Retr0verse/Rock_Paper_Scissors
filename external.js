@@ -26,39 +26,39 @@ function game() {
         // Plays round to determine winner
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
-                return `It's a Tie, You both picked ${playerSelection}`;
+                return alert(`It's a Tie, You both picked ${playerSelection}`);
             } else if (playerSelection === "rock" && computerSelection === "paper") {
                 computerScore++
-                return "The Computer Wins! Paper beats Rock";
+                return alert("The Computer Wins! Paper beats Rock");
             } else if (playerSelection === "paper" && computerSelection === "scissors") {
                 computerScore++
-                return "The Computer Wins! Scissors beats Paper";
+                return alert("The Computer Wins! Scissors beats Paper");
             } else if (playerSelection === "scissors" && computerSelection === "rock") {
                 computerScore++
-                return "The Computer Wins! Rock beats Scissors";
+                return alert("The Computer Wins! Rock beats Scissors");
             } else if (playerSelection === "rock" && computerSelection === "scissors") {
                 playerScore++
-                return "Nice! You Win! Rock beats Scissors";
+                return alert("Nice! You Win! Rock beats Scissors");
             } else if (playerSelection === "paper" && computerSelection === "rock") {
                 playerScore++
-                return "Nice! You Win! Paper beats Rock";
+                return alert("Nice! You Win! Paper beats Rock");
             } else if (playerSelection === "scissors" && computerSelection === "paper") {
                 playerScore++
-                return "Nice! You Win! Scissors beats Paper";
+                return alert("Nice! You Win! Scissors beats Paper");
             }
         }
     }
     // determine winner of 5 round game  
     if (playerScore > computerScore) {
-        rpsChamp = "Winner! You beat the Computer!";
+        theWinner = "Winner! You beat the Computer!";
     } else if (playerScore === computerScore) {
-        rpsChamp = "You tied with the Computer. Try Again!"
+        theWinner = "You tied with the Computer. Try Again!"
     } else {
-        rpsChamp = "Loser! You lost to the Computer"
+        theWinner = "Loser! You lost to the Computer"
     }
 
     // Reports who won the game  
-    alert("After Five Rounds, The Winner is: " + rpsChamp);
+    alert("After Five Rounds, The Winner is: " + theWinner);
 }
 
 // Starts the game
