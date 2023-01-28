@@ -2,6 +2,7 @@
 //this function will randomly choose between rock, paper, or scissors.
 //Tip use console to ensure this is returning as expected before moving on.
 //Works correctly so far.
+function game() {
 
 function getComputerChoice() {
     const computerSelection = Math.floor(Math.random() * 3);
@@ -40,21 +41,23 @@ function playRound(playerSelection, computerSelection)  {
 
 
     if (playerSelection === computerSelection) {
-        return "Draw! Pick again!";
+        return alert("Draw! Pick again!");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors!";
+        return alert("You Win! Rock beats Scissors!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock!";
+        return alert("You Lose! Paper beats Rock!");
 
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock!";
+        return alert("You Win! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper!";
+        return alert("You Lose! Scissors beats Paper!");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors!";
+        return alert("You Lose! Rock beats Scissors!");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper!";
+        return alert("You Win! Scissors beats Paper!");
     }
 };
 
 console.log(playRound(getPlayerChoice() , getComputerChoice()));
+}
+game();
