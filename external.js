@@ -37,56 +37,28 @@ console.log(getPlayerChoice);
 //make sure playerSelection always returns lowercase letters to match function.
 //having issues with variables not comparing
 function playRound(playerSelection, computerSelection)  {
-    for (let i = 0; i < 5; i++) {
 
-//test scoring and round
-    let computerScore = 0;
-    let playerScore = 0;
-//test scoring and rounds
+
 
     if (playerSelection === computerSelection) {
         return alert("Draw! Pick again!");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        playerScore+=1;
         return alert("You Win! Rock beats Scissors!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        computerScore+=1;
         return alert("You Lose! Paper beats Rock!");
+
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        playerScore+=1;
         return alert("You Win! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        computerScore+=1;
         return alert("You Lose! Scissors beats Paper!");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        computerScore+=1;
         return alert("You Lose! Rock beats Scissors!");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        playerScore+=1;
         return alert("You Win! Scissors beats Paper!");
-
-
-    
     }
-    console.log(playRound);
-    console.log(playerScore);
-    console.log(computerScore);
+};
 
-function winGame(playerScore, computerScore) {
-    if (playerScore > computerScore) {
-        return alert("You Win!");
-    } else if (playerScore < computerScore) {
-        return alert("You Lose!");
 
-    } else {
-        return alert("Draw!");
-    };
-}
-    console.log(winGame);
-
-}
-}
 console.log(playRound(getPlayerChoice() , getComputerChoice()));
 }
-
 game();
