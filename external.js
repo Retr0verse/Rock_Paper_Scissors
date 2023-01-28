@@ -1,15 +1,11 @@
-//user vs computer rock-paper-scissors-begin with a function called getComputerChoice,
-//this function will randomly choose between rock, paper, or scissors.
-//Tip use console to ensure this is returning as expected before moving on.
-//Works correctly so far.
-
+//computer input 1-3 points for comparison with user for rounds
 function getComputerChoice() {
-    const computerSelection = Math.floor(Math.random() * 3);
-    if (computerSelection === 0) {
+    const computerSelection = Math.floor(Math.random() * 3) + 1;
+    if (computerSelection === 1) {
         return "rock";
-    } else if (computerSelection === 1) {
+    } else if (computerSelection === 2) {
         return "paper";
-    } else {
+    } else if (computerSelection === 3) {
         return "scissors";
     };
 }
@@ -42,18 +38,23 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "Draw! Pick again!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors!", playerScore++;
+        playerScore++;
+        return alert("You Win! Rock beats Scissors!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock!", computerScore++;
-
+        computerScore++;
+        return alert("You Lose! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock!", playerScore++;
+        playerScore++;
+        return alert("You Win! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper!", computerScore++;
+        computerScore++;
+        return alert("You Lose! Scissors beats Paper!");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors!", computerScore++;
+        computerScore++;
+        return alert("You Lose! Rock beats Scissors!");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper!", playerScore++;
+        playerScore++;
+        return alert("You Win! Scissors beats Paper!");
     }
 };
 
