@@ -1,101 +1,65 @@
-//For easier code write a getPlayerChoice function, perhaps?
-//this function will randomly choose between rock, paper, or scissors.
-//correct console entries.
-let playerScore = 0;
-let computerScore = 0;
 
-let getPlayerChoice = function () {
-//RE WORK with MULTIPLE ROUNDS ** 
-var playRound = function () {
-    //Players Choice
-    let playerSelection = prompt("Rock, Paper, or Scissors?: ") ;
-    console.log(playerSelection);
-
-    if (playerSelection == "rock") {
-        console.log(playerSelection = 1);
-    } else if (playerSelection == "paper") {
-        console.log(playerSelection = 2);
-    } else if (playerSelection == "scissors") {
-        console.log(playerSelection = 3);
-
-    }
-
-    //user vs computer rock-paper-scissors-begin with a function called getComputerChoice,
-    //this function will randomly choose between rock, paper, or scissors.
-    //Tip use console to ensure this is returning as expected before moving on.
-    //Works correctly so far.
-
-    let computerSelection = Math.floor(Math.random() * 3) + 1;
-    console.log(computerSelection);
-
-    if (computerSelection == 1) {
-        alert("Rock!");
-    } else if (computerSelection == 2) {
-        alert("Paper!");
-    } else if (computerSelection == 3) {
-        alert("Scissors!");
-    }
-
-    return {
-        "playerSelection": playerSelection,
-        "computerSelection": computerSelection
-    };
-}
-//Write a function that plays single round, function should take two paramters(playerSelection, computerSelection)
-//returns a string that declares the winner of the round, "You Lose! Paper beats Rock!" or "You Win! Rock beats Scissors!"
-//make sure playerSelection always returns lowercase letters to match function.
-//having issues with variables not comparing
-
-//COMPARE REWORK WITH MULTIPLE ROUNDS **
-function result(playerSelection, computerSelection) {
-    if (computerSelection == 2 && playerSelection == 1) {
-        alert("You Lose! Paper beats Rock!");
-        computerScore += 1;
-    } else if (computerSelection == 3 && playerSelection == 1) {
-        alert("You Win! Rock beats Scissors!");
-        playerScore += 1;
-    } else if (computerSelection == 1 && playerSelection == 2) {
-        alert("You Win! Paper beats Rock!");
-        playerScore += 1;
-    } else if (computerSelection == 1 && playerSelection == 3) {
-        alert("You Lose! Rock beats Scissors!");
-        computerScore += 1;
-    } else if (computerSelection == 2 && playerSelection == 3) {
-        alert("You Win! Scissors beats Paper!");
-        playerScore += 1;
-    } else if (computerSelection == 3 && playerSelection == 2) {
-        alert("You Lose! Scissors beats Paper!");
-        computerScore += 1;
-    } else if (computerSelection == 2 && playerSelection == 1) {
-        alert("You Win! Paper beats Rock!");
-        playerScore += 1;
-    } else if (computerSelection == playerSelection) {
-        alert("Draw!");
-    }
+// Determines computer choice and randomizes selection
+function getComputerChoice() {
+    const options = ["Rock", "Paper", "Scissors"];
+    const randomChoice = Math.floor(Math.random() * options.length);
+    return options[randomChoice];
 }
 
-//Write a function that plays multiple rounds Game(), 
-// Call playRound inside the function to play 5 rounds that keeps score and reports winner or loser at the end.
+//Runs the game
+function game() {
+    let roundsPlayed = 0;
+    let playerScore = 0;
+    let computerScore = 0;
+    let rpsChamp = "";
 
-//ALWAYS DRAW FIXME:
-function Game() {
-    //ensure prompt continues to run for 5 games.
-    // create game score for each round to sum up and announce winner or loser.(will need score variable)
-    for (let i = 0; i < 5; i++) {
-        var opt = playRound();
-        result(opt.playerSelection, opt.computerSelection);
+    // loop game for 5 rounds. Track rounds and score
+    for (i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice().toLowerCase();
+        const playerSelection = prompt("Choose Your Weapon", "Rock, Paper, Scissors").toLowerCase();
+        // console.log(playerSelection)
+        // console.log(computerSelection)
+        console.log(playRound(playerSelection, computerSelection));
+        console.log("Player Win Totals " + playerScore);
+        console.log("Computer Win Totals " + computerScore);
+
+        // Plays round to determine winner
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return `It's a Tie, You both picked ${playerSelection}`;
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                computerScore++
+                return "The Computer Wins! Paper beats Rock";
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                computerScore++
+                return "The Computer Wins! Scissors beats Paper";
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                computerScore++
+                return "The Computer Wins! Rock beats Scissors";
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                playerScore++
+                return "Nice! You Win! Rock beats Scissors";
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                playerScore++
+                return "Nice! You Win! Paper beats Rock";
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                playerScore++
+                return "Nice! You Win! Scissors beats Paper";
+            }
+        }
     }
+    // determine winner of 5 round game  
+    if (playerScore > computerScore) {
+        rpsChamp = "Winner! You beat the Computer!";
+    } else if (playerScore === computerScore) {
+        rpsChamp = "You tied with the Computer. Try Again!"
+    } else {
+        rpsChamp = "Loser! You lost to the Computer"
+    }
+
+    // Reports who won the game  
+    alert("After Five Rounds, The Winner is: " + rpsChamp);
 }
 
-function winGame() {
-    if(playerScore == 5) {
-        return "You Win!";
-        } else if(computerScore == 5) {
-        return "You Lose!";
-    
-    }
-}
-Game();
-
-console.log(playerScore);
-console.log(computerScore);
+// Starts the game
+game();
