@@ -8,10 +8,9 @@ function getComputerChoice() {
 
 //Runs the game
 function game() {
-    let roundsPlayed = 0;
     let playerScore = 0;
     let computerScore = 0;
-    let rpsChamp = "";
+    let theWinner = "";
 
     // loop game for 5 rounds. Track rounds and score
     for (i = 0; i < 5; i++) {
