@@ -19,7 +19,7 @@ console.log(getComputerChoice);
 //this function will randomly choose between rock, paper, or scissors.
 //correct console entries.
 function getPlayerChoice() {
-    const playerSelection = prompt("Rock, Paper, or Scissors?");
+    const playerSelection = prompt("Rock, Paper, or Scissors? Best of Five!");
     if (playerSelection.toLowerCase() === "rock") {
         return "rock";
 
@@ -41,22 +41,22 @@ function playRound(playerSelection, computerSelection)  {
         return alert("Draw! Pick again!");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
-        return alert("You Win! Rock beats Scissors!");
+        return alert("Round Won! Rock beats Scissors!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore++;
-        return alert("You Lose! Paper beats Rock!");
+        return alert("Round Lost! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
-        return alert("You Win! Paper beats Rock!");
+        return alert("Round Won! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++;
-        return alert("You Lose! Scissors beats Paper!");
+        return alert("Round Lost! Scissors beats Paper!");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++;
-        return alert("You Lose! Rock beats Scissors!");
+        return alert("Round Lost! Rock beats Scissors!");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
-        return alert("You Win! Scissors beats Paper!");
+        return alert("Round Won! Scissors beats Paper!");
     }
 }
 
@@ -74,13 +74,13 @@ console.log("computer score: " + computerScore);
 }
 //add final score after 5 rounds, announce winner loser or draw
     if (playerScore > computerScore) {
-        Winner = "Player Wins!";
+        Winner = "You Win! Nice Job!";
      } else if (playerScore < computerScore) {
-        Winner = "Player Loses!";
+        Winner = "The Computer Wins! Better Luck Next Time!";
      } else if (playerScore === computerScore) {
-        Winner = "You tied!";
+        Winner = "You Tied! Play Again!";
 
 }
-alert("After 5 rounds: " + Winner);
+alert("After 5 Intense Rounds: " + Winner);
 }
 game();
