@@ -37,23 +37,25 @@ console.log(getPlayerChoice);
 //make sure playerSelection always returns lowercase letters to match function.
 //having issues with variables not comparing
 function playRound(playerSelection, computerSelection)  {
-
-
-
     if (playerSelection === computerSelection) {
         return alert("Draw! Pick again!");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        playerScore++;
         return alert("You Win! Rock beats Scissors!");
     } else if (playerSelection === "rock" && computerSelection === "paper") {
+        computerScore++;
         return alert("You Lose! Paper beats Rock!");
-
     } else if (playerSelection === "paper" && computerSelection === "rock") {
+        playerScore++;
         return alert("You Win! Paper beats Rock!");
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        computerScore++;
         return alert("You Lose! Scissors beats Paper!");
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        computerScore++;
         return alert("You Lose! Rock beats Scissors!");
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        playerScore++;
         return alert("You Win! Scissors beats Paper!");
     }
 };
