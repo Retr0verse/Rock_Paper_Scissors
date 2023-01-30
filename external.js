@@ -81,6 +81,6 @@ console.log("computer score: " + computerScore);
         Winner = "You tied!";
 
 }
-console.log("After 5 rounds: " + Winner);
+alert("After 5 rounds: " + Winner);
 }
 game();
