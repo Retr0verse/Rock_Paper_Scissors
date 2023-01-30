@@ -19,7 +19,7 @@ console.log(getComputerChoice);
 //this function will randomly choose between rock, paper, or scissors.
 //correct console entries.
 function getPlayerChoice() {
-    var playerSelection = prompt("Rock, Paper, or Scissors?");
+    const playerSelection = prompt("Rock, Paper, or Scissors?");
     if (playerSelection.toLowerCase() === "rock") {
         return "rock";
 
@@ -58,9 +58,19 @@ function playRound(playerSelection, computerSelection)  {
         playerScore++;
         return alert("You Win! Scissors beats Paper!");
     }
-};
-
-
-console.log(playRound(getPlayerChoice() , getComputerChoice()));
 }
+
+let playerScore = parseInt(0); 
+let computerScore = parseInt(0);
+
+for(var i = 0; i < 5; i++) {
+//testing below - delete and replace as needed
+let playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection , computerSelection));
+console.log("your score: " + playerScore);
+console.log("computer score: " + computerScore);
+}
+}
+
 game();
