@@ -62,6 +62,7 @@ function playRound(playerSelection, computerSelection)  {
 
 let playerScore = parseInt(0); 
 let computerScore = parseInt(0);
+let Winner = "";
 
 for(var i = 0; i < 5; i++) {
 //testing below - delete and replace as needed
@@ -71,6 +72,15 @@ console.log(playRound(playerSelection , computerSelection));
 console.log("your score: " + playerScore);
 console.log("computer score: " + computerScore);
 }
-}
+//add final score after 5 rounds, announce winner loser or draw
+    if (playerScore > computerScore) {
+        Winner = "Player Wins!";
+     } else if (playerScore < computerScore) {
+        Winner = "Player Loses!";
+     } else if (playerScore === computerScore) {
+        Winner = "You tied!";
 
+}
+console.log("After 5 rounds: " + Winner);
+}
 game();
