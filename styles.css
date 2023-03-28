@@ -1,0 +1,42 @@
+html {
+    background-color: black;
+    text-align: center;
+    line-height: 4;
+    font-family: VT323
+    , Verdana, Geneva, Tahoma, sans-serif;
+    color: chartreuse;
+    margin-top:10%;
+    font-size: 30px;
+}
+
+#rps {
+    font-size: 1px;
+    color: chartreuse;
+    background: black;
+    border-color: rgb(215, 243, 4);
+    border-style: dotted;
+    font-family: VT323
+    , Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;    
+}
+
+#restart {
+    font-size: 40px;
+    color: chartreuse;
+    background: black;
+    border-color: rgb(215, 243, 4);
+    border-style: dotted;
+    font-family: VT323
+    , Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;   
+}
+
+div {
+    font-size: 50px;
+    color: chartreuse;
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+
