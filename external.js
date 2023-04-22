@@ -24,7 +24,7 @@ function getComputerChoice() {
         return  "paper";
     } else {
         return  "scissors";
-    };
+    }
 }
 
 
